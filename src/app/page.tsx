@@ -1,36 +1,20 @@
 "use client";
 
-import Image from "next/image";
 import styles from "./page.module.scss";
-import CustomInput from "../Atoms/CustomInput/CustomInput";
-import { useTheme } from "@/hooks/use-theme";
 import cn from "classnames";
 
-import SunIcon from "./icons/sun.svg";
-import MoonIcon from "./icons/moon.svg";
-import ButtonIcon from "@/Atoms/ButtonIcon/ButtonIcon";
+import SoloField from "@/Atoms/SoloField/SoloField";
+import ThemeSwitcher from "@/Atoms/ThemeSwitcher/ThemeSwitcher";
 
 export default function Home() {
-  const { setTheme } = useTheme();
   return (
     <>
-      <div className={cn(styles["theme-button"])}>
-        <ButtonIcon
-          onClick={() => setTheme("light")}
-          className={cn(styles["button"], styles["light"])}
-          icon={<SunIcon />}
-        />
-        <ButtonIcon
-          onClick={() => setTheme("dark")}
-          className={cn(styles["button"], styles["dark"])}
-          icon={<MoonIcon />}
-        />
-      </div>
       <main className={cn(styles["main"])}>
         <h1 className={styles["title"]}>Create your resume</h1>
+        <ThemeSwitcher></ThemeSwitcher>
 
-        <CustomInput placeholder="Name..."></CustomInput>
-        <CustomInput placeholder="Surname..."></CustomInput>
+        <SoloField fieldName={"name"} placeholder="Name..."></SoloField>
+        <SoloField fieldName={"surname"} placeholder="Surname..."></SoloField>
       </main>
     </>
   );

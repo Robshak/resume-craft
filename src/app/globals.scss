@@ -1,4 +1,12 @@
-html[data-theme="light"] {
+html {
+  transition: none;
+}
+
+[data-theme] {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+:root {
   --background-color: #eef0f3;
   --back-color: #fff;
   --main-color: #ffffff;

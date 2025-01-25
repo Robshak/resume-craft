@@ -8,7 +8,7 @@ export default function ButtonIcon({
   ...props
 }: ButtonIconProps) {
   return (
-    <button className={cn(styles["button"])} {...props}>
+    <button className={cn(styles["button"], className)} {...props}>
       <span className={cn(styles["icon"])}>{icon}</span>
     </button>
   );
