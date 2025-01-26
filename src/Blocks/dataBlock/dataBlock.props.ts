@@ -1,7 +1,9 @@
+import { MultiFields } from "@/Store/Slices/personData";
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 
-export interface dataBlockProps
+export interface DataBlockProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+  fieldName: keyof MultiFields;
   title: string;
   placeholder: string;
   className?: string;
