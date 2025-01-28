@@ -6,6 +6,8 @@ export const PERSON_DATA_SLICE_NAME = "personData";
 export interface SoloFields {
   name: string;
   surname: string;
+  inGeneral: string;
+  picture: string;
 }
 
 interface elementWithId {
@@ -23,7 +25,7 @@ export interface PersonDataState {
 }
 
 const initialState: PersonDataState = {
-  soloFields: { name: "", surname: "" },
+  soloFields: { name: "", surname: "", inGeneral: "", picture: "" },
   multiFields: { points: [] },
 };
 

@@ -1,0 +1,43 @@
+.input {
+  display: none;
+}
+
+.label {
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 200px;
+  width: 150px;
+
+  background-color: var(--background-color);
+
+  border-radius: 10px;
+  border: 4px solid var(--border-color);
+}
+
+.label:hover {
+  filter: brightness(85%);
+}
+
+.active {
+  padding: 0px;
+}
+
+.picture {
+  height: 100%;
+  width: 100%;
+
+  border-radius: 6px;
+}
+
+.label svg {
+  height: 70px;
+  width: 70px;
+
+  stroke: var(--border-color2);
+  stroke-width: 2px;
+  stroke-linecap: round;
+}
