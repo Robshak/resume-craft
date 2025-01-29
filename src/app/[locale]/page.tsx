@@ -12,7 +12,7 @@ import CustomButton from "@/Atoms/CustomButton/CustomButton";
 import NavigateTo from "@/Wrappers/NavigateTo/NavigateTo";
 import { useTranslations } from "next-intl";
 import LanguageDropdown from "@/Components/LanguageDropdown/LanguageDropdown";
-import DataBlock from "@/Blocks/DataBlock/DataBlock";
+import DataBlock from "@/Blocks/DataBlock/dataBlock";
 
 export default function Home() {
   const t = useTranslations("");
