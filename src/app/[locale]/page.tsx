@@ -4,7 +4,6 @@ import styles from "./page.module.scss";
 import cn from "classnames";
 
 import ThemeSwitcher from "@/Components/ThemeSwitcher/ThemeSwitcher";
-import DataBlock from "@/Blocks/DataBlock/DataBlock";
 import CustomTextarea from "@/Atoms/CustomTextarea/CustomTextarea";
 import CustomInput from "@/Atoms/CustomInput/CustomInput";
 import InputPicture from "@/Atoms/InputPicture/InputPicture";
@@ -13,6 +12,7 @@ import CustomButton from "@/Atoms/CustomButton/CustomButton";
 import NavigateTo from "@/Wrappers/NavigateTo/NavigateTo";
 import { useTranslations } from "next-intl";
 import LanguageDropdown from "@/Components/LanguageDropdown/LanguageDropdown";
+import DataBlock from "@/Blocks/DataBlock/DataBlock";
 
 export default function Home() {
   const t = useTranslations("");

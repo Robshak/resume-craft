@@ -8,7 +8,6 @@ import { useState } from "react";
 import Standart from "./Templates/Standart/Standart";
 import NavigateTo from "@/Wrappers/NavigateTo/NavigateTo";
 import CustomButton from "@/Atoms/CustomButton/CustomButton";
-import Test from "./Templates/Test/Test";
 import { processFields } from "@/utils/textFormatter";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
