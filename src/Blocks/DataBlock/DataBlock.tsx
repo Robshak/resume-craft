@@ -14,7 +14,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import AddIcon from "./icons/plus.svg";
 import DeleteIcon from "./icons/delete.svg";
-import { DataBlockProps } from "./dataBlock.props";
+import { DataBlockProps } from "./DataBlock.props";
 
 export default function DataBlock({
   fieldName,
