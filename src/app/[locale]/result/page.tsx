@@ -14,7 +14,7 @@ import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import { useTranslations } from "next-intl";
 
-const templates = [Standart, Test];
+const templates = [Standart];
 
 const baseColor = "#9E31B4";
 
