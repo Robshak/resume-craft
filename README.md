@@ -11,4 +11,6 @@
 + Next-intl (локализация)
 + React-pdf (сохранение в pdf)
 
+ссылка на деплой - https://resume-craft-one.vercel.app/en
+
 ***by Robshak***
