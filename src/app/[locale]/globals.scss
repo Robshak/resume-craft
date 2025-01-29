@@ -6,6 +6,9 @@
   --border-color: #cccccc;
   --border-color2: #7e7e7e;
   --primary-color: #c1e8ff;
+  --primary-color2: #2c6af0;
+
+  --shadow: rgba(0, 0, 0, 0.1);
 
   --base-width: 500px;
   --base-font-size: 18px;
@@ -19,11 +22,18 @@ html[data-theme="dark"] {
   --border-color: #9e9e9e;
   --border-color2: #c9c9c9;
   --primary-color: #7da0ca;
+  --primary-color2: #2c6af0;
+
+  --shadow: rgba(255, 255, 255, 0.1);
 }
 
 * {
   box-sizing: border-box;
   transition: all 0.3s ease;
+}
+
+button {
+  cursor: pointer;
 }
 
 body {

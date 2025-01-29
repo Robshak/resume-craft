@@ -35,11 +35,8 @@
 }
 
 .button {
-  transition: all 0.3s ease;
-}
-
-.button:hover {
-  transition: all 0s ease;
+  transition: filter 0.3s ease, background-color 0.3s ease,
+    border 0.3s ease, stroke 0.3s ease;
 }
 
 .delete-button {

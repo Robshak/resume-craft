@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/Store/store";
 import { setSoloField } from "@/Store/Slices/personData";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function InputPicture({
   className,
@@ -35,12 +36,16 @@ export default function InputPicture({
 
   return (
     <>
-      <label
+      <motion.label
         htmlFor="file-upload"
         className={cn(styles["label"], { [styles["active"]]: picture })}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
       >
         {picture ? (
           <Image
+            width={150}
+            height={200}
             src={picture}
             alt="Uploaded"
             className={cn(styles["picture"])}
@@ -48,7 +53,7 @@ export default function InputPicture({
         ) : (
           <ImgIcon className={cn(styles["img-icon"])} />
         )}
-      </label>
+      </motion.label>
       <input
         id="file-upload"
         type="file"

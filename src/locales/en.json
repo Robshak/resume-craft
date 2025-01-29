@@ -1,0 +1,29 @@
+{
+  "main-header": "Create your resume",
+  "helper": "Put the text between the ~ symbols if you want to color it.",
+  "name": "Name",
+  "surname": "Surname",
+  "in-general": "In general",
+  "contacts": "Contacts",
+  "contact": "Contact",
+  "education": "Education",
+  "point": "Point",
+  "activity": "Activity",
+  "experience": "Experience",
+  "skills": "Skills",
+  "skill": "Skill",
+  "ahcivments": "Ahcivments",
+  "ahcivment": "Ahcivment",
+  "qualities": "Personal qualities",
+  "quality": "Quality",
+  "urls": "Urls",
+  "url": "Url",
+  "projects": "Projects",
+  "project": "Project",
+  "no-experience": "No experience",
+  "buttons": {
+    "check-result": "Check result",
+    "back": "Back",
+    "PDF": "PDF"
+  }
+}

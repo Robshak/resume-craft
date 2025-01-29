@@ -4,19 +4,27 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 export const PERSON_DATA_SLICE_NAME = "personData";
 
 export interface SoloFields {
+  picture: string;
   name: string;
   surname: string;
   inGeneral: string;
-  picture: string;
+  activity: string;
 }
 
-interface elementWithId {
+export interface elementWithId {
   id: string;
   value: string;
 }
 
 export interface MultiFields {
-  points: elementWithId[];
+  contacts: elementWithId[];
+  education: elementWithId[];
+  experience: elementWithId[];
+  skills: elementWithId[];
+  ahcivments: elementWithId[];
+  personalQualities: elementWithId[];
+  urls: elementWithId[];
+  projects: elementWithId[];
 }
 
 export interface PersonDataState {
@@ -25,8 +33,23 @@ export interface PersonDataState {
 }
 
 const initialState: PersonDataState = {
-  soloFields: { name: "", surname: "", inGeneral: "", picture: "" },
-  multiFields: { points: [] },
+  soloFields: {
+    picture: "",
+    name: "",
+    surname: "",
+    inGeneral: "",
+    activity: "",
+  },
+  multiFields: {
+    contacts: [],
+    education: [],
+    experience: [],
+    skills: [],
+    ahcivments: [],
+    personalQualities: [],
+    urls: [],
+    projects: [],
+  },
 };
 
 export const personDataSlice = createSlice({
@@ -35,17 +58,26 @@ export const personDataSlice = createSlice({
   reducers: {
     setSoloField: (
       state,
-      action: PayloadAction<{ field: keyof SoloFields; value: string }>
+      action: PayloadAction<{
+        field: keyof SoloFields;
+        value: string;
+      }>
     ) => {
       state.soloFields[action.payload.field] = action.payload.value;
     },
     // _________________________MultiField_________________________
     pushMultiField: (
       state,
-      action: PayloadAction<{ field: keyof MultiFields; value: string }>
+      action: PayloadAction<{
+        field: keyof MultiFields;
+        value: string;
+      }>
     ) => {
       const { field, value } = action.payload;
-      state.multiFields[field].push({ value: value, id: crypto.randomUUID() });
+      state.multiFields[field].push({
+        value: value,
+        id: crypto.randomUUID(),
+      });
     },
     setMultiField: (
       state,
@@ -56,16 +88,21 @@ export const personDataSlice = createSlice({
       }>
     ) => {
       const { field, value, index } = action.payload;
-      state.multiFields[field] = state.multiFields[field].map((item) => {
-        if (item.id === index) {
-          return { ...item, value };
+      state.multiFields[field] = state.multiFields[field].map(
+        (item) => {
+          if (item.id === index) {
+            return { ...item, value };
+          }
+          return item;
         }
-        return item;
-      });
+      );
     },
     removeMultiField: (
       state,
-      action: PayloadAction<{ field: keyof MultiFields; index: string }>
+      action: PayloadAction<{
+        field: keyof MultiFields;
+        index: string;
+      }>
     ) => {
       const { field, index } = action.payload;
       state.multiFields[field] = state.multiFields[field].filter(
@@ -75,6 +112,10 @@ export const personDataSlice = createSlice({
   },
 });
 
-export const { setSoloField, pushMultiField, setMultiField, removeMultiField } =
-  personDataSlice.actions;
+export const {
+  setSoloField,
+  pushMultiField,
+  setMultiField,
+  removeMultiField,
+} = personDataSlice.actions;
 export default personDataSlice.reducer;

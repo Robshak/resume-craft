@@ -1,19 +1,46 @@
+.fixed-settings {
+  position: fixed;
+  right: 50px;
+  top: 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .main {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
 
-  margin: 50px auto;
-  width: 1200px;
+  margin: 50px auto 100px auto;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  h1 {
+    margin-bottom: 0px;
+  }
+
+  margin-bottom: 60px;
 }
 
 .title {
   color: var(--inverse-color);
-
   font-size: 48px;
   font-weight: 400;
-  margin-bottom: 50px;
+}
+
+.help {
+  color: var(--border-color2);
+  font-size: 20px;
+  font-weight: 300;
 }
 
 .top-block {
@@ -42,4 +69,13 @@
 }
 .surname {
   grid-area: surname;
+}
+
+.bottom-block {
+  width: var(--base-width);
+
+  display: flex;
+  justify-content: end;
+
+  margin-top: 30px;
 }

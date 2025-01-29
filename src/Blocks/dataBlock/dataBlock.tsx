@@ -58,10 +58,16 @@ export default function DataBlock({
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className={cn(styles["delete-button"], styles["button"])}
+                className={cn(
+                  styles["delete-button"],
+                  styles["button"]
+                )}
                 onClick={() =>
                   dispatch(
-                    removeMultiField({ field: fieldName, index: point.id })
+                    removeMultiField({
+                      field: fieldName,
+                      index: point.id,
+                    })
                   )
                 }
               >

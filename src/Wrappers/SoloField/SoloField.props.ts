@@ -1,5 +1,5 @@
+import { CustomInputProps } from "@/Atoms/CustomInput/CustomInput.props";
 import { SoloFields } from "@/Store/Slices/personData";
-import { CustomInputProps } from "../CustomInput/CustomInput.props";
 import { ReactNode } from "react";
 
 export interface SoloFieldProps extends CustomInputProps {
