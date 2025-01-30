@@ -4,7 +4,7 @@ import styles from "./page.module.scss";
 import cn from "classnames";
 import { RootState } from "@/Store/store";
 import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Standart from "./Templates/Standart/Standart";
 import NavigateTo from "@/Wrappers/NavigateTo/NavigateTo";
 import CustomButton from "@/Atoms/CustomButton/CustomButton";
@@ -21,6 +21,14 @@ export default function Choice() {
   const t = useTranslations("buttons");
   const [currentTemplate, setCurrentTemplate] = useState(0);
   const [color, setColor] = useState(baseColor);
+  const [width, setWidth] = useState<null | number>(null);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const soloFields = useSelector(
     (state: RootState) => state.personData.soloFields
@@ -35,16 +43,15 @@ export default function Choice() {
   const SelectedTemplate = templates[currentTemplate];
 
   const handleSaveAsPdf = async () => {
-    const element = document.getElementById("resume");
-    if (!element) return;
+    const resume = document.getElementById("resume");
+    if (!resume) return;
 
-    const canvas = await html2canvas(element, {
+    const canvas = await html2canvas(resume, {
       scale: 2,
       useCORS: true,
     });
 
     const imgData = canvas.toDataURL("image/png");
-
     const pdf = new jsPDF("p", "mm", "a4");
     const imgWidth = 210;
     const pageHeight = 297;
@@ -73,9 +80,20 @@ export default function Choice() {
   return (
     <main
       className={cn(styles["main"])}
-      style={{ "--resume-color": color } as React.CSSProperties}
+      style={
+        {
+          "--resume-color": color,
+          "--window-width": width,
+        } as React.CSSProperties
+      }
     >
-      <div id="resume">
+      <div className={cn(styles["resume"])}>
+        <SelectedTemplate
+          {...processedSoloFields}
+          {...processedMultiFields}
+        />
+      </div>
+      <div className={cn(styles["resume-clone"])} id="resume">
         <SelectedTemplate
           {...processedSoloFields}
           {...processedMultiFields}

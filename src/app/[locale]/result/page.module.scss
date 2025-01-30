@@ -2,10 +2,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: start;
   gap: 30px;
 
   margin: 50px auto 100px auto;
   width: 100%;
+}
+
+.resume-clone {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
 }
 
 .settings {
@@ -53,4 +60,67 @@
 
 .highlighted {
   color: var(--resume-color);
+}
+
+@media (max-width: 900px) {
+  .main {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .resume {
+    zoom: 0.9;
+  }
+}
+
+@media (max-width: 800px) {
+  .main {
+    gap: 20px;
+  }
+
+  .bottom-block {
+    margin: 10px;
+  }
+
+  .resume {
+    zoom: 0.8;
+  }
+}
+
+@media (max-width: 700px) {
+  .resume {
+    zoom: 0.7;
+  }
+}
+
+@media (max-width: 600px) {
+  .main {
+    button {
+      font-size: 16px;
+    }
+  }
+
+  .bottom-block {
+    margin: 0px;
+  }
+
+  .resume {
+    zoom: 0.58;
+  }
+}
+
+@media (max-width: 500px) {
+  .bottom-block {
+    width: 100% !important;
+  }
+
+  .resume {
+    zoom: 0.46;
+  }
+}
+
+@media (max-width: 400px) {
+  .resume {
+    zoom: 0.4;
+  }
 }

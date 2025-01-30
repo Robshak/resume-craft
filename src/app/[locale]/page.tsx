@@ -45,51 +45,61 @@ export default function Home() {
           />
         </div>
         <DataBlock
+          className={cn(styles["data-block"])}
           title={t("contacts")}
           placeholder={`${t("contact")}...`}
           fieldName={"contacts"}
         />
         <SoloField
+          className={cn(styles["textarea"])}
           fieldName={"inGeneral"}
           component={<CustomTextarea />}
           placeholder={`${t("in-general")}...`}
         />
         <DataBlock
+          className={cn(styles["data-block"])}
           title={t("education")}
           placeholder={`${t("point")}...`}
           fieldName={"education"}
         />
         <DataBlock
+          className={cn(styles["data-block"])}
           title={t("experience")}
           placeholder={`${t("point")}...`}
           fieldName={"experience"}
         />
         <DataBlock
+          className={cn(styles["data-block"])}
           title={t("skills")}
           placeholder={`${t("skill")}...`}
           fieldName={"skills"}
         />
         <SoloField
+          className={cn(styles["textarea"])}
           fieldName={"activity"}
           component={<CustomTextarea />}
           placeholder={`${t("activity")}...`}
         />
         <DataBlock
+          className={cn(styles["data-block"])}
           title={t("ahcivments")}
           placeholder={`${t("ahcivment")}...`}
           fieldName={"ahcivments"}
         />
         <DataBlock
+          className={cn(styles["data-block"])}
           title={t("qualities")}
           placeholder={`${t("quality")}...`}
           fieldName={"personalQualities"}
         />
         <DataBlock
+          className={cn(styles["data-block"])}
           title={t("urls")}
           placeholder={`${t("url")}...`}
           fieldName={"urls"}
         />
         <DataBlock
+          className={cn(styles["data-block"])}
           title={t("projects")}
           placeholder={`${t("project")}...`}
           fieldName={"projects"}
